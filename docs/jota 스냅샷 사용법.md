@@ -67,7 +67,7 @@ passwd : Jotajota!
 (dmojsite) root@jota:/home/jota/site/dmoj# python3 manage.py runbridged
 ```
 * ### judge-server  
-judge-server를 시작할 때는 root 권한을 해제하여 가상 환경만 활성화된 상태에서 진행해야합니다.
+judge-server를 시작하기 위해선 root 권한을 해제하여 가상 환경만 활성화된 상태에서 진행해야합니다.
 ```
 (dmojsite) ubuntu@jota:/home/jota/site/dmoj# dmoj -c judge.yml localhost
 ```
