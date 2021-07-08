@@ -1,3 +1,12 @@
+# JOTA-dmoj-online-judge
+(JOTA **site**-side)
+
+This is a fork of [DMOJ/online-judge](https://github.com/DMOJ/online-judge).
+
+## Manuals
+* [JCloud 인스턴스 설정하기](docs/README_JCLOUD.md)
+* [JOTA Site 설정하기](docs/README_SITE.md)
+
 DMOJ: Modern Online Judge [![Build Status](https://github.com/DMOJ/online-judge/workflows/build/badge.svg)](https://github.com/DMOJ/online-judge/actions/) [![Slack](https://slack.dmoj.ca/badge.svg)](https://slack.dmoj.ca)
 =====
 
