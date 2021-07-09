@@ -1,4 +1,4 @@
-# JOTA: JBNU Online Teaching Assistant
+# JOTA: JBNU Online Teaching Assistant **(Web)**
 
 JOTA는 전북대 컴퓨터공학부에서 프로그래밍 과제 제출 및 자동 채점을 위해 만들어진 서비스입니다. 오픈소스인 아래 DMOJ 프로젝트를 기반으로 구축하였고 필요한 기능, 오류 수정 등을 학부 학생들이 직접 진행하고 있습니다. 특히 3학년 2학기 오픈소스SW개발 수업에서 프로젝트로 진행합니다. 
 
@@ -6,14 +6,17 @@ Contact: hyunchan.park@jbnu.ac.kr (박현찬 교수님)
 
 ## Repositories
 JOTA는 DMOJ와 마찬가지로 web, judge server 두 개의 파트로 분리되어 각각 다른 프로젝트로 관리합니다.
-- web: https://github.com/hyunchan-park/JOTA-dmoj-online-judge
-- judge: https://github.com/hyunchan-park/JOTA-dmoj-judge-server
+- Web: https://github.com/hyunchan-park/JOTA-dmoj-online-judge
+- Judge: https://github.com/hyunchan-park/JOTA-dmoj-judge-server
 
 ## Documents
+### General
 1. [JCloud 인스턴스 생성 및 설정하기](docs/README_JCLOUD.md)
 2. [JOTA Web 설정하기](docs/README_JOTA_WEB.md)
+3. JOTA Judge 설정하기
+
 ### Appendix
--  [dmoj release 버전으로 JOTA 구축하기](https://github.com/hyunchan-park/JOTA-dmoj-online-judge/blob/master/docs/jota%20%EC%8A%A4%EB%83%85%EC%83%B7%20%EC%82%AC%EC%9A%A9%EB%B2%95.md) (**Not Forked Version, Cannot PR**)
+- [dmoj release 버전으로 JOTA 구축하기](https://github.com/hyunchan-park/JOTA-dmoj-online-judge/blob/master/docs/jota%20%EC%8A%A4%EB%83%85%EC%83%B7%20%EC%82%AC%EC%9A%A9%EB%B2%95.md) (**Not Forked Version, Cannot PR**)
 
 -----
 
