@@ -1,4 +1,4 @@
-# Setting JOTA Site
+# Setting JOTA Web
 
 *Last Update: 9. Jul. 2021*
 
