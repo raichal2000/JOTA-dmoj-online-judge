@@ -4,6 +4,12 @@ JOTA는 전북대 컴퓨터공학부에서 프로그래밍 과제 제출 및 자
 
 Contact: hyunchan.park@jbnu.ac.kr (박현찬 교수님)
 
+## Repositories
+JOTA는 DMOJ와 마찬가지로 web, judge server 두 개의 파트로 분리되어 각각 다른 프로젝트로 관리합니다.
+- web: https://github.com/hyunchan-park/JOTA-dmoj-online-judge
+- judge: https://github.com/hyunchan-park/JOTA-dmoj-judge-server
+
+## Documents
 - JCloud 기반 JOTA 개발 환경 구축 메뉴얼: [CLICK](https://github.com/hyunchan-park/JOTA-dmoj-online-judge/blob/master/docs/jota%20%EC%8A%A4%EB%83%85%EC%83%B7%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
   
 -----
