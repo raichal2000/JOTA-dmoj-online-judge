@@ -1,6 +1,6 @@
 # Setting JOTA Web
 
-*Last Update: 9. Jul. 2021*
+*Last Update: 10. Jul. 2021*
 
 **DMOJ site official docs**: https://docs.dmoj.ca/#/site/installation
 
@@ -8,13 +8,13 @@
 
 * 반드시 공식 문서를 읽으면서 진행하십시오. 명령어는 아래의 수정된 명령어를 사용하세요.
 * 본인의 github 계정에서 해당 repository를 **fork** 하십시오: https://github.com/hyunchan-park/JOTA-dmoj-online-judge
-* JCloud 인스턴스에서 `jota` 디렉토리를 생성하십시오.
+* JCloud 인스턴스에서 `jota` 와 `jota/problems` 디렉토리를 생성하십시오.
     ```
-    ~$ mkdir jota
+    ~$ mkdir jota jota/problems
     ```
 * pip3 패키지 설치 또는 python3 코드 실행 중 오류가 발생할 때, 접두어 `sudo` 를 붙이지 않았는지 확인하십시오.
 * 패키지의 버전 업데이트로 인하여 세팅이 실패될 수 있습니다.
-* 외부 IP로 웹서버를 테스트 하지 않았습니다. 현재 localhost 로만 테스트하였습니다.
+* 외부 IP로 Web 서버를 테스트하지 않았습니다. 현재 localhost 로만 테스트하였습니다.
 
 ## Installing the prerequisites
 original: https://docs.dmoj.ca/#/site/installation?id=installing-the-prerequisites
@@ -126,7 +126,7 @@ original: https://docs.dmoj.ca/#/site/installation?id=setting-up-database-tables
     ```
     (dmojsite) ~/jota/site$ sudo python3 manage.py createsuperuser
     ```
-
+    굳이 위 명령을 실행하지 않아도, `ID = admin, PW = admin` 의 관리자 계정이 만들어져 있습니다.
 ## Setting up Celery
 original: https://docs.dmoj.ca/#/site/installation?id=setting-up-celery
 
@@ -145,17 +145,19 @@ original: https://docs.dmoj.ca/#/site/installation?id=setting-up-celery
 original: https://docs.dmoj.ca/#/site/installation?id=running-the-server
 
 
-* 웹 서버를 열기 위한 새로운 세션을 만듭니다.
+1. 웹 서버를 열기 위한 새 SSH 연결 세션을 만듭니다. (세션 #1)
     ```
     ~$ . jota/dmojsite/bin/activate
     (dmojsite) ~$ sudo python3 jota/site/manage.py runserver 0.0.0.0:8000
     ```
 
-* bridged를 실행하기 위한 새로운 세션을 만듭니다.
+2. bridged를 실행하기 위한 새 SSH 연결 세션을 만듭니다. (세션 #2)
     ```
     ~$ . jota/dmojsite/bin/activate
     (dmojsite) ~$ sudo python3 jota/site/manage.py runbridged
     ```
+
+3. JOTA Web (e.g. http://localhost:8000/) 에 잘 접속되는지 확인합니다.
 
 ## Setting up uWSGI
 original: https://docs.dmoj.ca/#/site/installation?id=setting-up-uwsgi
