@@ -148,13 +148,13 @@ original: https://docs.dmoj.ca/#/site/installation?id=running-the-server
 * 웹 서버를 열기 위한 새로운 세션을 만듭니다.
     ```
     ~$ . jota/dmojsite/bin/activate
-    (dmojsite) ~$ python3 jota/site/manage.py runserver 0.0.0.0:8000
+    (dmojsite) ~$ sudo python3 jota/site/manage.py runserver 0.0.0.0:8000
     ```
 
 * bridged를 실행하기 위한 새로운 세션을 만듭니다.
     ```
     ~$ . jota/dmojsite/bin/activate
-    (dmojsite) ~$ python3 jota/site/manage.py runbridged
+    (dmojsite) ~$ sudo python3 jota/site/manage.py runbridged
     ```
 
 ## Setting up uWSGI
