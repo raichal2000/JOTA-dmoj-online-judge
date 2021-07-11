@@ -69,24 +69,35 @@ original: https://docs.dmoj.ca/#/site/installation?id=installing-prerequisites
     ```
     ~/jota/site$ curl -o dmoj/local_settings.py https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/local_settings.py
     ```
-* 데이터베이스 비밀번호 변경 및 필요한 부분 수정
-    ```
-    ~/jota/site$ vi dmoj/local_settings.py
-    ```
-    ```db
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'dmoj',
-            'USER': 'dmoj',
-            'PASSWORD': '<DB-비밀번호>',
-            'HOST': '<IP-주소>',
-            'OPTIONS': {
-                'charset': 'utf8mb4',
-                'sql_mode': 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION',
-            },
+  * 데이터베이스 비밀번호 변경 및 필요한 부분 수정
+      ```
+      ~/jota/site$ vi dmoj/local_settings.py
+      ```
+      ```db
+      DATABASES = {
+          'default': {
+              'ENGINE': 'django.db.backends.mysql',
+              'NAME': 'dmoj',
+              'USER': 'dmoj',
+              'PASSWORD': '<DB-비밀번호>',
+              'HOST': '<IP-주소>',
+              'OPTIONS': {
+                  'charset': 'utf8mb4',
+                  'sql_mode': 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION',
+              },
+      ```
 
+  * 로그파일 저장 경로 설정 (e.g. 'jota/logfile.txt')
     ```
+    'handlers': {
+        # You may use this handler as example for logging to other files..
+        'bridge': {
+            ...
+            'filename': 'jota/logfile.txt',
+            ...
+        },
+    ```
+
 * `manage.py` 실행
     ```
     (dmojsite) ~/jota/site$ sudo python3 manage.py check
