@@ -82,5 +82,5 @@ dmoj 사이트의 **관리자 페이지 - 제출 - 채점기** 에서 jota-judge
 # code-server
 
 ```
-ubuntu@jota:/home/jota/site/dmoj# code-server
+ubuntu@jota:/home/jota/site# code-server
 ```
