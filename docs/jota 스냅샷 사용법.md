@@ -49,7 +49,7 @@ ALLOWED_HOSTS = ['IP address 입력']
 ```
 * 서버 start
 ```
-교내 8000번 포트가 포워딩이  8001로 진행
+교내 8000번 포트가 포워딩이 안 되어 있기 때문에 8001로 진행
 (dmojsite) root@jota:/home/jota/site# python3 manage.py runserver 0.0.0.0:8001 
 ```
 
