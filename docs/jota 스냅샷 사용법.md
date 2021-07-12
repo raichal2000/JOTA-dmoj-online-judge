@@ -42,14 +42,14 @@ ALLOWED_HOSTS = ['IP address 입력']
 
 * 서버를 동작하기 전에 필요한 명령 수행
 ```
-(dmojsite) root@jota:/home/jota/site/dmoj# ./make_style.sh
-(dmojsite) root@jota:/home/jota/site/dmoj# python3 manage.py collectstatic
-(dmojsite) root@jota:/home/jota/site/dmoj# python3 manage.py compilemessages
-(dmojsite) root@jota:/home/jota/site/dmoj# python3 manage.py compilejsi18n
+(dmojsite) root@jota:/home/jota/site# ./make_style.sh
+(dmojsite) root@jota:/home/jota/site# python3 manage.py collectstatic
+(dmojsite) root@jota:/home/jota/site# python3 manage.py compilemessages
+(dmojsite) root@jota:/home/jota/site# python3 manage.py compilejsi18n
 ```
 * 서버 start
 ```
-(dmojsite) root@jota:/home/jota/site/dmoj# python3 manage.py runserver 0.0.0.0:8000 
+(dmojsite) root@jota:/home/jota/site# python3 manage.py runserver 0.0.0.0:8000 
 ```
 
 **[외부 ip 주소]:8000 url로 접근**   
@@ -64,12 +64,12 @@ passwd : Jotajota!
 
 * ### bridge 활성화   
 ```
-(dmojsite) root@jota:/home/jota/site/dmoj# python3 manage.py runbridged
+(dmojsite) root@jota:/home/jota/site# python3 manage.py runbridged
 ```
 * ### judge-server  
 judge-server를 시작하기 위해선 root 권한을 해제하여 가상 환경만 활성화된 상태에서 진행해야합니다.
 ```
-(dmojsite) ubuntu@jota:/home/jota/site/dmoj# dmoj -c judge.yml localhost
+(dmojsite) ubuntu@jota:/home/jota/site# dmoj -c judge.yml localhost
 ```
 
 dmoj 사이트의 **관리자 페이지 - 제출 - 채점기** 에서 jota-judge에 초록불이 들어오면 정상
