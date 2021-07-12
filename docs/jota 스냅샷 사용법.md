@@ -49,10 +49,10 @@ ALLOWED_HOSTS = ['IP address 입력']
 ```
 * 서버 start
 ```
-(dmojsite) root@jota:/home/jota/site# python3 manage.py runserver 0.0.0.0:8000 
+(dmojsite) root@jota:/home/jota/site# python3 manage.py runserver 0.0.0.0:8001 
 ```
 
-**[외부 ip 주소]:8000 url로 접근**   
+**[외부 ip 주소]:8001 url로 접근**   
 ![site](https://user-images.githubusercontent.com/42068110/124557855-f00eb380-de74-11eb-8b38-780df93f938b.PNG)
 
 ```
