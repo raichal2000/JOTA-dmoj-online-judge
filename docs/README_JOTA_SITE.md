@@ -1,4 +1,4 @@
-# Setting JOTA Web
+# Setting JOTA Site
 
 *Last Update: 10. Jul. 2021*
 
@@ -14,7 +14,7 @@
     ```
 * pip3 패키지 설치 또는 python3 코드 실행 중 오류가 발생할 때, 접두어 `sudo` 를 붙이지 않았는지 확인하십시오.
 * 패키지의 버전 업데이트로 인하여 세팅이 실패될 수 있습니다.
-* 외부 IP로 Web 서버를 테스트하지 않았습니다. 현재 localhost 로만 테스트하였습니다.
+* 외부 IP로 Site 서버를 테스트하지 않았습니다. 현재 localhost 로만 테스트하였습니다.
 
 ## Installing the prerequisites
 original: https://docs.dmoj.ca/#/site/installation?id=installing-the-prerequisites
@@ -168,7 +168,7 @@ original: https://docs.dmoj.ca/#/site/installation?id=running-the-server
     (dmojsite) ~$ sudo python3 jota/site/manage.py runbridged
     ```
 
-3. JOTA Web (e.g. http://localhost:8000/) 에 잘 접속되는지 확인합니다.
+3. JOTA Site (e.g. http://localhost:8000/) 에 잘 접속되는지 확인합니다.
 
 ## Setting up uWSGI
 original: https://docs.dmoj.ca/#/site/installation?id=setting-up-uwsgi
