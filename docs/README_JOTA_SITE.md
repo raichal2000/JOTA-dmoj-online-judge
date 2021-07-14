@@ -26,6 +26,7 @@ original: https://docs.dmoj.ca/#/site/installation?id=installing-the-prerequisit
     $ sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     $ sudo apt install nodejs
     $ sudo npm install -g sass postcss-cli postcss autoprefixer
+    $ sudo apt install python3.8-venv
     ```
 
 ## Creating the database
@@ -48,11 +49,19 @@ original: https://docs.dmoj.ca/#/site/installation?id=creating-the-database
 ## Installing prerequisites
 original: https://docs.dmoj.ca/#/site/installation?id=installing-prerequisites
 
+* jota 디렉토리 생성 및 이동
+
+  ```
+  ~$ mkdir ~/jota
+  ~$ cd ~/jota
+  ```
+
 * 가상환경 구축 및 실행
     ```
-    ~$ python3 -m venv jota/dmojsite
-    ~$ . jota/dmojsite/bin/activate
+    ~/jota$ python3 -m venv dmojsite
+    ~/jota$ . ~/jota/dmojsite/bin/activate
     ```
+    
 * fork 했던 저장소를 `site` 폴더 안에 저장
     ```
     (dmojsite) ~/jota$ git clone https://github.com/<your-github-id>/JOTA-dmoj-online-judge site
@@ -60,19 +69,33 @@ original: https://docs.dmoj.ca/#/site/installation?id=installing-prerequisites
     (dmojsite) ~/jota/site$ git submodule init
     (dmojsite) ~/jota/site$ git submodule update
     ```
+    
 * python3 관련 패키지 모두 설치
     ```
     (dmojsite) ~/jota/site$ sudo pip3 install -r requirements.txt
     (dmojsite) ~/jota/site$ sudo pip3 install mysqlclient
+    (dmojsite) ~/jota/site$ sudo pip install --upgrade jinja2
     ```
+    
 * curl 명령어로 `local_settings.py` 파일 다운로드
+  ```
+  ~/jota/site$ curl -o dmoj/local_settings.py https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/local_settings.py
+  ```
+
+  + 아래 vi 명령어 이용 혹은 Code-Server 상에서 ~/jota/site/dmoj/local_settings.py 파일 수정
+
     ```
-    ~/jota/site$ curl -o dmoj/local_settings.py https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/local_settings.py
+    ~/jota/site$ vi dmoj/local_settings.py
     ```
-  * 데이터베이스 비밀번호 변경 및 필요한 부분 수정
+
+  * 할당받은 외부IP 이용 시 ALLOWED_HOSTS 항목 수정
+
       ```
-      ~/jota/site$ vi dmoj/local_settings.py
+      ALLOWED_HOSTS = ['<IP-Address>']
       ```
+
+  * DATABASES 내 PASSWORD 항목 수정
+
       ```db
       DATABASES = {
           'default': {
@@ -80,25 +103,26 @@ original: https://docs.dmoj.ca/#/site/installation?id=installing-prerequisites
               'NAME': 'dmoj',
               'USER': 'dmoj',
               'PASSWORD': '<DB-비밀번호>',
-              'HOST': '<IP-주소>',
+              'HOST': '127.0.0.1',
               'OPTIONS': {
                   'charset': 'utf8mb4',
                   'sql_mode': 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION',
               },
       ```
 
-  * 로그파일 저장 경로 설정 (e.g. 'jota/logfile.txt')
+  * 로그파일 저장 경로 설정 (e.g. logfile.txt)
     ```
     'handlers': {
         # You may use this handler as example for logging to other files..
         'bridge': {
             ...
-            'filename': 'jota/logfile.txt',
+            'filename': 'logfile.txt',
             ...
         },
     ```
 
 * `manage.py` 실행
+    
     ```
     (dmojsite) ~/jota/site$ sudo python3 manage.py check
     System check identified no issues (47 silenced).
@@ -141,10 +165,17 @@ original: https://docs.dmoj.ca/#/site/installation?id=setting-up-database-tables
 ## Setting up Celery
 original: https://docs.dmoj.ca/#/site/installation?id=setting-up-celery
 
+* 가상환경 해제
+
+  ```
+  (dmojsite) ~/jota/site$ deactivate
+  ~/jota/site$ cd ~
+  ```
+
 * Celery workers 인증
     ```
     $ service redis-server start
-
+    
     ==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ===
     Authentication is required to start 'redis-server.service'.
     Authenticating as: Ubuntu (ubuntu)
@@ -158,17 +189,17 @@ original: https://docs.dmoj.ca/#/site/installation?id=running-the-server
 
 1. 웹 서버를 열기 위한 새 SSH 연결 세션을 만듭니다. (세션 #1)
     ```
-    ~$ . jota/dmojsite/bin/activate
-    (dmojsite) ~$ sudo python3 jota/site/manage.py runserver 0.0.0.0:8000
+    ~$ . ~/jota/dmojsite/bin/activate
+    (dmojsite) ~$ sudo python3 ~/jota/site/manage.py runserver 0.0.0.0:8001
     ```
 
 2. bridged를 실행하기 위한 새 SSH 연결 세션을 만듭니다. (세션 #2)
     ```
-    ~$ . jota/dmojsite/bin/activate
-    (dmojsite) ~$ sudo python3 jota/site/manage.py runbridged
+    ~$ . ~/jota/dmojsite/bin/activate
+    (dmojsite) ~$ sudo python3 ~/jota/site/manage.py runbridged
     ```
 
-3. JOTA Site (e.g. http://localhost:8000/) 에 잘 접속되는지 확인합니다.
+3. JOTA Site (e.g. http://localhost:8001/ or http://<외부IP>:8001) 에 잘 접속되는지 확인합니다.
 
 ## Setting up uWSGI
 original: https://docs.dmoj.ca/#/site/installation?id=setting-up-uwsgi
