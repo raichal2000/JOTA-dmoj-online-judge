@@ -20,9 +20,9 @@
       Description = <your-description>
 
     [Source]
-      Select Boot Source = "Instance Snapshot"
+      Select Boot Source = "Image"
       Create New Volume = "No"
-      Available => Allocated = ["dmoj_v2.1.1"]
+      Available => Allocated = ["Ubuntu.20.04.ssh7777.VS-Code-Server"]
 
     [Flavor]
       Available => Allocated = ["cse-services.flavor"]
@@ -44,26 +44,50 @@
 6. Launch Instance 버튼을 누릅니다.
 
 7. 페이지를 새로고침하여 인스턴스가 생성됐는지 확인합니다.
+
+    | **Instance Name** | <your-instance-name>                |
+    | ----------------- | ----------------------------------- |
+    | **Image Name**    | Ubuntu.20.04.ssh7777.VS-Code-Server |
+    | **IP Address**    | 10.0.ddd                            |
+    | **Flavor**        | cse-services.flavor                 |
+    | **Key Pair**      | **<your-ssh-key>**                  |
+    | **Status**        | Active                              |
+    | ...               | ...                                 |
+
+8. 생성한 인스턴스에 접속합니다.
+
+    - SSH 접속 방법
+
     ```
-     Instance Name       | Image Name     | IP Address 
-    --------------------------------------------------------------------
-     <your-instance-name>  dmoj_v2.1.1      10.0.ddd
-    --------------------------------------------------------------------
-     Flavor              | Key Pair       | Status     | Availability | ...
-    --------------------------------------------------------------------
-     cse-services.flavor   <your-ssh-key>   Active       nova
+    IP = 좌측 상단 JCloud 로고 [cse-students(xxx.xxx.xxx.xxx) ▼] 중 "xxx.xxx.xxx.xxx" 입력
+    Port = 생성한 인스턴스의 사설 IP [10.0.0.ddd] 에서 "19ddd" 입력
     ```
-8. 생성한 인스턴스로 SSH 접속합니다.
+
+    +++
+
+    + Code-Server 접속 방법
+
     ```
-    IP = 왼쪽 상단 JCloud 로고 [cse-students(xxx.xxx.xxx.xxx) ▼] 중 "xxx.xxx.xxx.xxx" 입력
-    Port = 생성한 Instance의 사설 IP [10.0.0.ddd] 에서 "19ddd" 입력
+    url: "http://xxx.xxx.xxx.xxx:10ddd"
+    
+    >> IP = 좌측 상단 JCloud 로고 [cse-students(xxx.xxx.xxx.xxx) ▼] 참조
+    >> Port = 생성한 인스턴스의 사설 IP [10.0.0.ddd] 에서 "ddd" 참조
+    >> Password = 생성한 인스턴스를 클릭하여 Log를 확인하여 상단의 Password 참조
+    ```
+
+    + Code-Server 접속 시 Password 변경 후 재부팅
+
+    ```
+    $ sudo vi /etc/code-server.conf
+    $ sudo reboot
     ```
 
 9. 유저 `ubuntu`의 비밀번호를 재설정합니다.
+
     ```
     $ sudo passwd ubuntu
-    New password: 
-    Retype new password: 
+    New password: <your-new-password>
+    Retype new password: <your-new-password>
     passwd: password updated successfully
     ```
 
@@ -72,3 +96,4 @@
     $ git config --global user.name "Gildong Hong"
     $ git config --global user.email "gildonghong@example.com"
     ```
+
