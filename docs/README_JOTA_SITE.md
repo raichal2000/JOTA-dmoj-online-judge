@@ -1,20 +1,15 @@
 # Setting JOTA Site
 
-*Last Update: 10. Jul. 2021*
+*Last Update: 14. Jul. 2021*
 
 **DMOJ site official docs**: https://docs.dmoj.ca/#/site/installation
 
 ## 시작하기 전 필독
 
 * 반드시 공식 문서를 읽으면서 진행하십시오. 명령어는 아래의 수정된 명령어를 사용하세요.
-* 본인의 github 계정에서 해당 repository를 **fork** 하십시오: https://github.com/hyunchan-park/JOTA-dmoj-online-judge
-* JCloud 인스턴스에서 `jota` 와 `jota/problems` 디렉토리를 생성하십시오.
-    ```
-    ~$ mkdir jota jota/problems
-    ```
+* 본인의 github 계정에서 해당 repository를 **fork** 하십시오: https://github.com/hyunchan-park/JOTA-dmoj-online-judge.
 * pip3 패키지 설치 또는 python3 코드 실행 중 오류가 발생할 때, 접두어 `sudo` 를 붙이지 않았는지 확인하십시오.
 * 패키지의 버전 업데이트로 인하여 세팅이 실패될 수 있습니다.
-* 외부 IP로 Site 서버를 테스트하지 않았습니다. 현재 localhost 로만 테스트하였습니다.
 
 ## Installing the prerequisites
 original: https://docs.dmoj.ca/#/site/installation?id=installing-the-prerequisites
@@ -82,7 +77,7 @@ original: https://docs.dmoj.ca/#/site/installation?id=installing-prerequisites
   ~/jota/site$ curl -o dmoj/local_settings.py https://raw.githubusercontent.com/DMOJ/docs/master/sample_files/local_settings.py
   ```
 
-  + 아래 vi 명령어 이용 혹은 Code-Server 상에서 ~/jota/site/dmoj/local_settings.py 파일 수정
+  + vi 명령어 혹은 Code-Server 상에서 `~/jota/site/dmoj/local_settings.py` 파일 수정
 
     ```
     ~/jota/site$ vi dmoj/local_settings.py
