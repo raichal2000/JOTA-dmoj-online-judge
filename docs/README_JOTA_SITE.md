@@ -105,13 +105,14 @@ original: https://docs.dmoj.ca/#/site/installation?id=installing-prerequisites
               },
       ```
 
-  * 로그파일 저장 경로 설정 (e.g. logfile.txt)
+  * 로그파일 절대경로 설정 (e.g. '/home/ubuntu/jota/logfile.txt')
+
     ```
     'handlers': {
         # You may use this handler as example for logging to other files..
         'bridge': {
             ...
-            'filename': 'logfile.txt',
+            'filename': '/home/ubuntu/jota/logfile.txt',
             ...
         },
     ```
